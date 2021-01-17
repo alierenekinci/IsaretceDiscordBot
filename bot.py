@@ -11,7 +11,7 @@ from discord.ext import commands
 from discord.ext.commands import errors
 from main import *
 
-token = "NzgxNDU3ODg3ODk2NjY2MTEz.X797Xw.9pvvip5e8gvqJOo3OY6WmQbOtBQ"
+token = "TOKEN"
 bot = commands.Bot(command_prefix='.')
 
 @bot.event
