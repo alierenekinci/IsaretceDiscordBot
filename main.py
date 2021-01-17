@@ -20,6 +20,3 @@ def getData(text):
         description = siteIcerigi.find_all("p")[-1].getText()
 
         return title, gifLink, description
-
-text = input()
-print(getData(text))
