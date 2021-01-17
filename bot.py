@@ -1,17 +1,17 @@
 import discord
-import os
-import random
+#import os
+#import random
 import asyncio
 import aiohttp
-import time as t
+#import time as t
 import datetime
-from discord import Game
+#from discord import Game
 from discord.ext.commands import Bot
 from discord.ext import commands
 from discord.ext.commands import errors
 from main import *
 
-token = "TOKEN"
+token = "ODAwNDMxODk1MDYyMTE4NDg2.YASCSw.-qKkcRkXefvgGPB89eokXm6agcU"
 bot = commands.Bot(command_prefix='.')
 
 @bot.event
@@ -22,24 +22,29 @@ async def on_ready():
 
 @bot.command()
 async def i(ctx, *args):
-    title = getData(args[0])[0]
-    gif = getData(args[0])[1]
-    description = getData(args[0])[2]
-    embed = discord.Embed(
-                title=title,
-                description=description,
-                color=discord.Colour.purple()
-            )
-    embed.set_image(url=gif)
+    errorColor=0xed4337
+    mainColor=0xfde107
+    if len(args) > 1:
+        embed = embedFunc("Hata","Lütfen tek kelime giriniz.",errorColor)
+    elif len(args) == 0:
+        embed = embedFunc("Hata", "Lütfen kelime giriniz",errorColor)
+    else:
+        title, gif, description = getData(args[0])
+        if title != "0":
+            embed = embedFunc(title,description,mainColor)
+            embed.set_image(url=gif)
+            embed.set_footer(text="isaretce.com")
+            
+        else:
+            title="Kelime Bulunamadı"
+            embed = embedFunc(title,args[0],errorColor)
     await ctx.send(embed=embed)
-    #await ctx.send("**"+title+"**"+"\n"+description+"\n"+gif)
 
+def embedFunc(title,description,color):
+    embed = discord.Embed(
+                    title=title,
+                    description=description,
+                    color=discord.Colour(color)
+                )
+    return embed
 bot.run(token)
-
-#Geliştirmelerinizi bekliyorum :)
-#Yapılacaklar
-"""
-#+# Kanallar düzenlenebilir olacak
-#-# Tek bir kanal için değil oluşturulan kanal listesi için sorgulama yapacak
-#-# Tek bir rol için değil belirli kanalları belirli roller için sorgulama yapacak
-"""
