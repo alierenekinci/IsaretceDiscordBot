@@ -19,3 +19,5 @@ def getData(text):
         description = siteIcerigi.find_all("p")[-1].getText()
 
         return title, gifLink, description
+    
+# mükemmel yorum
