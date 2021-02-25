@@ -1,1 +1,1 @@
-worker: python focus.py
+worker: python main.py
