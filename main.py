@@ -9,9 +9,10 @@ import datetime
 from discord.ext.commands import Bot
 from discord.ext import commands
 from discord.ext.commands import errors
-from main import *
+from getData import *
 
-token = "ODAwNDMxODk1MDYyMTE4NDg2.YASCSw.-qKkcRkXefvgGPB89eokXm6agcU"
+
+token = os.environ.get('BOT-TOKEN')
 bot = commands.Bot(command_prefix='.')
 
 @bot.event
