@@ -3,7 +3,7 @@
 ## Giriş
 
 
-Discord sunucularında işaret dilini yaygınlaştırmak amacıyla isaretce.com'dan scrape ettimiz gifleri mesaj atan bir bot.
+Türkiye'deki Discord sunucularında işaret dilini yaygınlaştırmak amacıyla isaretce.com'dan scrape ettimiz gifleri mesaj atan bir bot.
 
 
 ## Kullanım
